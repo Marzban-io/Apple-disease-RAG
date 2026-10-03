@@ -1,0 +1,22 @@
+[
+  {"question": "When does fire blight infect apple blossoms and what weather favours it?",
+   "source": "kentucky_apple_scouting.pdf", "keyword": "blossom blight"},
+  {"question": "What weather conditions favour sooty blotch and flyspeck?",
+   "source": "maine_orchard_pest_mgmt.pdf", "keyword": "sooty blotch"},
+  {"question": "Which apple varieties are susceptible to apple scab?",
+   "source": "fao_lebanon_apple_losses.pdf", "keyword": "Red Delicious"},
+  {"question": "How much economic loss could fire blight cause to the apple industry in China?",
+   "source": "fire_blight_china.pdf", "keyword": "3,337"},
+  {"question": "What percentage of Moroccan farmers mentioned apple scab as a major disease?",
+   "source": "mdpi_morocco_apple_climate.pdf", "keyword": "82.6"},
+  {"question": "What adverse weather problems do apple farmers in Morocco face?",
+   "source": "mdpi_morocco_apple_climate.pdf", "keyword": "hail"},
+  {"question": "When is mite injury most significant in apple orchards?",
+   "source": "maine_orchard_pest_mgmt.pdf", "keyword": "petal fall"},
+  {"question": "What do apple scab lesions look like on the leaves?",
+   "source": "fao_ipm_caucasus.pdf", "keyword": "olive"},
+  {"question": "What causes sooty mold on apple fruit?",
+   "source": "fao_lebanon_apple_losses.pdf", "keyword": "honey"},
+  {"question": "For how long can one apple scab lesion keep producing spores?",
+   "source": "maine_orchard_pest_mgmt.pdf", "keyword": "6 weeks"}
+]
