@@ -11,8 +11,8 @@ from google import genai
 from google.genai import errors
 
 MODEL = "gemini-3.8-flash"   # pick a name printed by: python src\list_models.py
-TOP_K = 5                    # how many chunks the LLM gets to read
-RETRIES = 4                  # how many times to try when Gemini is busy
+TOP_K = 10                   # how many chunks the LLM gets to read
+RETRIES = 5                  # how many times to try when Gemini is busy
 
 PROMPT_TEMPLATE = """You are an assistant that helps apple farmers with plant diseases.
 Answer the question using ONLY the numbered sources below.
