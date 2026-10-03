@@ -1,0 +1,17 @@
+ vector  hybrid   question
+      6       3   When does fire blight infect apple blossoms and what weather favours it?
+      1       1   What weather conditions favour sooty blotch and flyspeck?
+   MISS       6   Which apple varieties are susceptible to apple scab?
+      1       1   How much economic loss could fire blight cause to the apple industry in China?
+      1       1   What percentage of Moroccan farmers mentioned apple scab as a major disease?
+      4       4   What adverse weather problems do apple farmers in Morocco face?
+      1       1   When is mite injury most significant in apple orchards?
+      1       2   What do apple scab lesions look like on the leaves?
+      5       1   What causes sooty mold on apple fruit?
+      1       1   For how long can one apple scab lesion keep producing spores?
+
+Valid test questions: 10/10
+
+method      Hit@5   Hit@10    MRR
+vector        80%      90%   0.66
+hybrid        90%     100%   0.72

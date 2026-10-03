@@ -5,14 +5,15 @@ import os
 import sys
 import time
 
-import chromadb
 from dotenv import load_dotenv
 from google import genai
 from google.genai import errors
 
+from retriever import hybrid_search
+
 MODEL = "gemini-3.8-flash"   # pick a name printed by: python src\list_models.py
 TOP_K = 10                   # how many chunks the LLM gets to read
-RETRIES = 5                  # how many times to try when Gemini is busy
+RETRIES = 4                  # how many times to try when Gemini is busy
 
 PROMPT_TEMPLATE = """You are an assistant that helps apple farmers with plant diseases.
 Answer the question using ONLY the numbered sources below.
@@ -31,9 +32,8 @@ Answer:"""
 
 
 def retrieve(question):
-    collection = chromadb.PersistentClient(path="chroma_db").get_collection("apple_diseases")
-    results = collection.query(query_texts=[question], n_results=TOP_K)
-    return list(zip(results["documents"][0], results["metadatas"][0]))
+    """Hybrid search (meaning + keywords). Returns TOP_K (text, metadata) pairs."""
+    return hybrid_search(question, TOP_K)
 
 
 def build_prompt(question, chunks):
