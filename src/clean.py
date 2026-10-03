@@ -43,7 +43,7 @@ def clean_text(text, repeated):
             continue
         lines.append(stripped)
     text = "\n".join(lines)
-    text = re.sub(r"(\w)-\n(\w)", r"\1\2", text)   # "bacte-\nrial" -> "bacterial"
+        text = re.sub(r"(\w)[-\u00ad\u2010\u2011]\n(\w)", r"\1\2", text)   # "bacte-\nrial" -> "bacterial"
     text = text.replace("\n", " ")                 # join broken lines into flowing text
     text = re.sub(r"\s{2,}", " ", text)            # collapse extra spaces
     return text.strip()
