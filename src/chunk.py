@@ -13,7 +13,7 @@ OUT_FILE = Path("data/processed/chunks.jsonl")
 
 CHUNK_SIZE = 1000   # target maximum characters per chunk (~200 words)
 OVERLAP = 200       # characters repeated from the end of the previous chunk
-MIN_CHUNK = 50      # drop tiny leftover chunks (usually table fragments)
+MIN_CHUNK = 200      # drop tiny leftover chunks (usually table fragments)
 
 
 def split_sentences(text):
