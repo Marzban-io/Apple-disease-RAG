@@ -13,6 +13,7 @@ OUT_FILE = Path("data/processed/chunks.jsonl")
 
 CHUNK_SIZE = 1000   # target maximum characters per chunk (~200 words)
 OVERLAP = 200       # characters repeated from the end of the previous chunk
+MIN_CHUNK = 50      # drop tiny leftover chunks (usually table fragments)
 
 
 def split_sentences(text):
@@ -41,11 +42,14 @@ def chunk_text(text):
                 if len(" ".join([previous] + overlap)) > OVERLAP:
                     break
                 overlap.insert(0, previous)
+            # only keep the overlap if the next sentence still fits next to it
+            if len(" ".join(overlap + [sentence])) > CHUNK_SIZE:
+                overlap = []
             current = overlap
         current.append(sentence)
     if current:
         chunks.append(" ".join(current))
-    return chunks
+    return [c for c in chunks if len(c) >= MIN_CHUNK]
 
 
 def main():
